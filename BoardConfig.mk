@@ -3,7 +3,6 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/acer/a500/BoardConfigVendor.mk
 
-TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := tegra
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
@@ -13,6 +12,10 @@ TARGET_ARCH_VARIANT_FPU := vfpv3-d16
 TARGET_CPU_SMP := true
 
 TARGET_BOOTLOADER_BOARD_NAME := A500
+TARGET_NO_BOOTLOADER := true
+
+# Keymapping 
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/acer/a500/recovery_ui.c
 
 BOARD_KERNEL_CMDLINE := 
 BOARD_KERNEL_BASE := 0x10000000
@@ -28,5 +31,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_PREBUILT_KERNEL := device/acer/a500/kernel
 
 BOARD_HAS_SDCARD_INTERNAL := true
+BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 
